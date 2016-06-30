@@ -32,7 +32,6 @@
         <activity
             android:name=".NumbersActivity"
             android:label="@string/category_numbers"
-	    Android:style="@string/category_numbers"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
