@@ -30,17 +30,17 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-	ArrayList<String> words = new ArrayList<String>();
-	words.add("one");
-	words.add("two");
-	words.add("three");
-	words.add("four");
-	words.add("five");
-	words.add("six");
-	words.add("seven");
-	words.add("eight");
-	words.add("nine");
-	words.add("ten");
+	ArrayList<String> words = new ArrayList<>();
+	words.add("One");
+	words.add("Two");
+	words.add("Three");
+	words.add("Four");
+	words.add("Five");
+	words.add("Six");
+	words.add("Seven");
+	words.add("Eight");
+	words.add("Nine");
+	words.add("Ten");
 
 	LinearLayout rootView = (LinearLayout)findViewById(R.id.rootview);
 	TextView wordView = new TextView(this);
