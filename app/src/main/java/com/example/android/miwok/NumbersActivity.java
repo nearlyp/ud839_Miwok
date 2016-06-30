@@ -25,6 +25,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -47,8 +48,8 @@ public class NumbersActivity extends AppCompatActivity {
 
 
 		ArrayAdapter<String> itemsAdapter =
-				new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, words);
-		GridView listView = (GridView) findViewById(R.id.list);
+				new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
+		ListView listView = (ListView) findViewById(R.id.list);
 		listView.setAdapter(itemsAdapter);
 	}
 }
