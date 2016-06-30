@@ -34,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-	ArrayList<String> words = new ArrayList<>();
+	ArrayList<Word> words = new ArrayList<Word>();
 	words.add("One");
 	words.add("Two");
 	words.add("Three");
