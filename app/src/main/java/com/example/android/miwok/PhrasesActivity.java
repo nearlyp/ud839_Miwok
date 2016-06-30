@@ -50,7 +50,7 @@ public class PhrasesActivity extends AppCompatActivity {
         WordAdapter adapter =
                 new WordAdapter(this, words);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list_phrases);
 
         listView.setAdapter(adapter);
     }
