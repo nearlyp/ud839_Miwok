@@ -38,6 +38,10 @@ public class NumbersActivity extends AppCompatActivity {
 	words.add("nine";
 	words.add("ten";
 
-	Log.v("numbers_activity", "Word at index 5: " + words(5));
+	LinearLayout rootView = (LinearLayout)findViewById(R.id.rootview);
+	TextView wordView = new TextView(this)
+	wordView.setText(words.get(0);
+	rootView.addView(wordView);
+
 	}
 }
