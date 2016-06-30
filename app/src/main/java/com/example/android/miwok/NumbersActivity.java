@@ -46,21 +46,11 @@ public class NumbersActivity extends AppCompatActivity {
 
 	int index = 0;
 
-	TextView wordView = new TextView(this);
-	wordView.setText(words.get(index));
-	rootView.addView(wordView);
-
+	while (index < 10){
+		TextView wordView = new TextView(this);
+		wordView.setText(words.get(index));
+		rootView.addView(wordView);
 		index++;
-
-	TextView wordView2 = new TextView(this);
-	wordView2.setText(words.get(index));
-	rootView.addView(wordView2);
-
-		index++;
-
-	TextView wordView3 = new TextView(this);
-	wordView3.setText(words.get(index));
-	rootView.addView(wordView3);
-
+		}
 	}
 }
