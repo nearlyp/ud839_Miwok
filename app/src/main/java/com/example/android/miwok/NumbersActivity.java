@@ -47,5 +47,30 @@ public class NumbersActivity extends AppCompatActivity {
 	wordView.setText(words.get(0));
 	rootView.addView(wordView);
 
+	TextView wordView2 = new TextView(this);
+	wordView.setText(words.get(1));
+	rootView.addView(wordView);
+
+	TextView wordView3 = new TextView(this);
+	wordView.setText(words.get(2));
+	rootView.addView(wordView);
+
+	TextView wordView4 = new TextView(this);
+	wordView.setText(words.get(3));
+	rootView.addView(wordView);
+
+	TextView wordView5 = new TextView(this);
+	wordView.setText(words.get(4));
+	rootView.addView(wordView);
+
+	TextView wordView6 = new TextView(this);
+	wordView.setText(words.get(5));
+	rootView.addView(wordView);
+	
+	TextView wordView7 = new TextView(this);
+	wordView.setText(words.get(6));
+	rootView.addView(wordView);
+
+
 	}
 }
