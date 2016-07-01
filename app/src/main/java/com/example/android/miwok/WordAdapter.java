@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,6 +39,20 @@ public class WordAdapter extends ArrayAdapter<Word>{
 
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         defaultTextView.setText(currentWord.getDefaultTranslation());
+
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_icon);
+
+        /**This conditional checks to make sure Word object has an image.
+         * From testing, it doesn't actually seem to be necessary: i.e., the phrases activity
+         * displays properly without the conditional logic. Tested on Android Studio 2.2 Preview 4
+         * and emulated device on Android N.
+         */
+
+        if (currentWord.hasImage()) {
+            iconView.setImageResource(currentWord.getImageResourceId());
+            iconView.setVisibility(View.VISIBLE);
+        }
+        else  iconView.setVisibility(View.GONE);
 
         return listItemView;
     }
