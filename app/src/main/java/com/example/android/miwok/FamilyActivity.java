@@ -48,7 +48,8 @@ public class FamilyActivity extends AppCompatActivity {
                 R.raw.family_father));
         words.add(new Word("daughter", "angsi", R.drawable.family_daughter,
                 R.raw.family_daughter));
-        words.add(new Word("son", "tune", R.drawable.family_son, R.raw.family_son));
+        words.add(new Word("son", "tune", R.drawable.family_son,
+                R.raw.family_son));
         words.add(new Word("older sister", "taachi", R.drawable.family_older_sister,
                 R.raw.family_older_sister));
         words.add(new Word("younger sister", "chalitti", R.drawable.family_younger_sister,
@@ -89,6 +90,11 @@ public class FamilyActivity extends AppCompatActivity {
                 Toast.makeText(FamilyActivity.this, "Playing sound", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 
     /**
