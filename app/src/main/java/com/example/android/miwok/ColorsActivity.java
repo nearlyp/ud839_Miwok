@@ -36,7 +36,13 @@ public class ColorsActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
 
-    @Override
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            releaseMediaPlayer();
+        }
+    };
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
@@ -51,7 +57,6 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
         words.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
 
-
         WordAdapter adapter =
                 new WordAdapter(this, words, R.color.category_colors);
 
@@ -63,14 +68,34 @@ public class ColorsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
 
+                releaseMediaPlayer();
+
                 Word word = words.get(i);
 
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getSoundFileID());
 
                 mMediaPlayer.start();
 
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
                 Toast.makeText(ColorsActivity.this, "Playing sound", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+        }
     }
 }
