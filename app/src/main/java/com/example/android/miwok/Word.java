@@ -14,22 +14,17 @@ public class Word {
     private static final int NO_IMAGE_PROVIDED = -1;
     private int mSoundFileId;
 
-    public Word(String defaultTranslation, String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int soundFileId){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mSoundFileId = soundFileId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID){
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int soundFileId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceID;
-    }
-    
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int soundFileId){
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
-        mImageResourceId = imageResourceID;
-	mSoundFileId = soundFileId;
+        mSoundFileId = soundFileId;
     }
 
     public String getDefaultTranslation(){
